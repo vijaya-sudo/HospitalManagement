@@ -1,0 +1,61 @@
+
+    <div class="bg">
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+                    <p class ="h3 fw-bold text-dark my-4">Create Doctor</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <form>
+                        <div class="mb-2">
+                            <label for=""> Patient Name</label>
+                            <input name="name" [(ngModel)]="patient.name" required="true" type="text" class="form-control" placeholder="Patient name">
+                        </div>
+                        <div class="mb-2">
+                            <label for="">Doctor Name</label>
+                            <select class="form-control" [(ngModel)] ="patient.doctor_name" name="name">
+                                <option *ngFor="let doctor of doctors" value ="{{doctor.name}}">{{doctor.name}}</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-2">
+                            <label for="">Date of Admission</label>
+                            <input name="field" required ="true" [(ngModel)] ="patient.date_of_visit" type="date" class="form-control" placeholder="Enter date of Admission">
+                        </div>
+
+
+                        <div class="mb-2">
+                            <label for="">Age</label>
+                            <input name="field"  required="true" [(ngModel)]="patient.age" type="number" class="form-control" placeholder="Enter age">
+                        </div>
+                        
+                        
+                        <div class="mb-2">
+                            <label for="gender">Choose Gender</label>
+                            <select id="gender" class="form-control" [(ngModel)]="patient.gender" name="gender">
+                                <option value="male">Male</option>
+                                <option value="female">FeMale</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </div>
+
+                        
+                        <div class="mb-2">
+                            <label for="">Precription</label>
+                            <input name="Precription" required ="true" [(ngModel)] ="patient.prescription" type="text" class="form-control" placeholder="">
+                        </div>
+
+
+                        <div class="mb-2">
+                            <button type="submit" (click)="savePatient()" class="btn btn-primary">Create</button>
+                        </div>
+                   
+                   
+                    </form>
+                </div>
+            </div>
+        </div>
